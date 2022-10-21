@@ -167,7 +167,7 @@ Execute o comando a seguir:
  **Cloud Shell**  
   ```
 $resourceGroup = "rg-ntier"
-$location = "eastus"
+$location = "eastus2"
 
 echo "Creating nsg's"
 az network nsg create --resource-group $resourceGroup --name "nsgApg" --location "$location"
@@ -183,7 +183,7 @@ az network nsg create --resource-group $resourceGroup --name "nsgADDS" --locatio
 **Cloud Shell**  
   ```
 $resourceGroup = "rg-ntier"
-$location = "eastus"
+$location = "eastus2"
 
 echo "Criando regras para nsgApg"
 az network nsg rule create --resource-group $resourceGroup --nsg-name "nsgApg" --name Allow-HTTP --access Allow --protocol Tcp --direction Inbound --priority 100 --source-address-prefix Internet --source-port-range "*" --destination-address-prefix "*" --destination-port-range 80
