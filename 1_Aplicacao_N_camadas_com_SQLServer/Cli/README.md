@@ -44,7 +44,7 @@ Execute o comando a seguir:
  **Cloud Shell** 
   ```
    $name = "rg-ntier"
-   $location = "eastus"
+   $location = "eastus2"
 
    az group create --name $name --location $location
 
@@ -59,7 +59,7 @@ Execute o comando a seguir:
  **Cloud Shell**  
   ```
    $resourceGroup = "rg-ntier"
-   $location = "eastus"
+   $location = "eastus2"
    $vNetName = "vnet-ntier"
    $addressPrefixVNet="10.5.0.0/16"
    $subnetNameApg = "subnet-apg"
@@ -222,7 +222,7 @@ Execute o comando a seguir:
  **Cloud Shell**  
   ```
 $resourceGroup = "rg-ntier"
-$location = "eastus"
+$location = "eastus2"
 $vNetName = "vnet-ntier"
 $subnetNameApg = "subnet-apg"
 $subnetWebName = "subnet-web"
@@ -259,7 +259,7 @@ az network vnet subnet update --vnet-name $vNetName --name $subnetADDSName --res
 **Cloud Shell**  
   ```
 $resourceGroup = "rg-ntier"
-$location = "eastus"
+$location = "eastus2"
 $vNetName = "vnet-ntier"
 $publicIpBastionName = "publicIpBastion"
 $bastionName = "bastionNTier"
@@ -284,6 +284,7 @@ az network bastion create --name $bastionName --public-ip-address $publicIpBasti
    $image = "Win2019datacenter"
    $login = "azureUser"
    $senha = "P4ss0w0rd555*"
+  
    
 
    az vm create `
@@ -296,7 +297,8 @@ az network bastion create --name $bastionName --public-ip-address $publicIpBasti
    --vnet-name $vNetName `
    --subnet $subnetWebName `
    --nsg $nsg `
-   --public-ip-address """"
+   --public-ip-address """" `
+   --zone $i
 }  
 ```
 
@@ -437,7 +439,7 @@ Execute o comando a seguir:
  ``` 
 $resourceGroup = "rg-ntier"
 $vNetName = "vnet-ntier"
-$location = "eastus"
+$location = "eastus2"
 $ddosName = "ddosNtier"
 
 
@@ -578,7 +580,8 @@ for ($i = 1; $i -lt 4 ; $i++)
       --vnet-name $vNetName `
       --subnet $subnetBusinessName `
       --nsg $nsg `
-      --public-ip-address """"
+      --public-ip-address """" `
+      --zone $i
 }
 
  ```
@@ -633,7 +636,7 @@ Criando regra de saída
 **Cloud Shell**  
   ```
 $resourceGroup = "rg-ntier"
-$location = "eastus"
+$location = "eastus2"
 $ipFrontLbBusiness = "10.5.2.7"
    
    
@@ -739,7 +742,7 @@ az network nsg rule create --resource-group $resourceGroup --nsg-name "nsgWeb" -
    ```powershell
 
       ## Global
-      $Location = "eastus"
+      $Location = "eastus2"
       $resourceGroup = "rg-ntier"
 
       # Storage
@@ -776,7 +779,8 @@ az network nsg rule create --resource-group $resourceGroup --nsg-name "nsgWeb" -
       --vnet-name $vNetName `
       --subnet $subnetDataName `
       --nsg $nsg `
-      --public-ip-address """"
+      --public-ip-address """" `
+      --zone $i
 } 
 
 
@@ -828,7 +832,7 @@ Criando regra de saída
 **Cloud Shell** 
   ```
 $resourceGroup = "rg-ntier"
-$location = "eastus"
+$location = "eastus2"
 $ipFrontLbData = "10.5.3.6"
    
    
@@ -845,7 +849,7 @@ az network nsg rule create --resource-group $resourceGroup --nsg-name "nsgBusine
 
    **Cloud Shell**  
    ```
-   $location= "eastus"
+   $location= "eastus2"
    $resourceGroup = "rg-ntier"
    $nsgADDS = "nsgADDS"
    $vNetName = "vnet-ntier"
@@ -876,8 +880,8 @@ az network nsg rule create --resource-group $resourceGroup --nsg-name "nsgBusine
     --nsg $nsgADDS `
     --private-ip-address $privateIpAddress `
     --no-wait `
-    --public-ip-address """"
-    
+    --public-ip-address """" `
+    --zone $i
    }  
    ```
 
