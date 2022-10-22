@@ -577,12 +577,13 @@ for ($i = 1; $i -lt 4 ; $i++)
       --admin-password $senha `
       --admin-username $login `
       --image $image `
+      --size Standard_B2s `
+      --zone $i `
       --no-wait `
       --vnet-name $vNetName `
       --subnet $subnetBusinessName `
       --nsg $nsg `
-      --public-ip-address """" `
-      --zone $i
+      --public-ip-address """" 
 }
 
  ```
@@ -880,18 +881,12 @@ az network nsg rule create --resource-group $resourceGroup --nsg-name "nsgBusine
     --data-disk-sizes-gb $dataDiskSize `
     --data-disk-caching None `
     --nsg $nsgADDS `
-    --private-ip-address $privateIpAddress `
+    --zone $i `
     --no-wait `
-    --public-ip-address """" `
-    --zone $i
-   }  
+    --private-ip-address $privateIpAddress `
+    --public-ip-address """"
+    }  
    ```
-
-
-
-
-
-
 
 
 ## Deletar recursos
