@@ -804,7 +804,7 @@ az network nsg rule create --resource-group $resourceGroup --nsg-name "nsgWeb" -
       $resourceGroup = "rg-ntier"
       $lbName = "lbData"
       $backendPoolName = "backEndPoolData"
-      $nicName = "vmDataNTier"+$i+"Nic"
+      $nicName = "vmDataNTier"+$i+"VMNic"
       $ipConfigName = "ipconfigvmDataNTier$i"
    
 
