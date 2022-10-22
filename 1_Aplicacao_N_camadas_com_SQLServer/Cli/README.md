@@ -836,7 +836,7 @@ Criando regra de saída
   ```
 $resourceGroup = "rg-ntier"
 $location = "eastus"
-$ipFrontLbData = "10.5.3.6"
+$ipFrontLbData = "10.5.3.4"
    
    
 echo "Criando regras para nsgBusiness"
