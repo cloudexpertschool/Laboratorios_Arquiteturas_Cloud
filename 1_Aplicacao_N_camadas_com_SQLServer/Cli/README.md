@@ -776,7 +776,7 @@ az network nsg rule create --resource-group $resourceGroup --nsg-name "nsgWeb" -
       --resource-group $resourceGroup `
       --admin-password $senha `
       --admin-username $login `
-      ---image $image `
+      --image $image `
       --size Standard_B2s `
       --zone $i `
       --no-wait `
